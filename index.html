@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <!-- MENU BAR -->
+    <!-- BARRA DE MENUS -->
     <div class="menubar">
       <span class="mi">Archivo</span>
       <span class="mi">Edición</span>
@@ -35,7 +35,7 @@
       <span class="mi">Ayuda</span>
     </div>
 
-    <!-- TOOLBAR -->
+    <!-- BARRA DE HERRAMIENTAS -->
     <div class="toolbar">
       <div class="tbb tbb-disabled"><span class="tbb-icon">◀</span>Atrás</div>
       <div class="tbb tbb-disabled"><span class="tbb-icon">▶</span>Adelante</div>
@@ -48,14 +48,14 @@
       <div class="tbb"><span class="tbb-icon">📜</span>Historial</div>
       <div class="tbb"><span class="tbb-icon">✉</span>Correo</div>
       <div class="tbb"><span class="tbb-icon">🖨</span>Imprimir</div>
-      <img src="media/throbber.gif" style="margin-left: 325px;">
+      <img src="media/throbber.gif" style="margin-left: 350px;">
     </div>
 
-    <!-- ADDRESS BAR -->
+    <!-- BARRA DE DIRECCIÓN -->
     <div class="addrbar">
       <span class="addr-label">Dirección</span>
       <div class="addr-combo">
-        <input class="addr-input" type="text" value="https://keygen7z.github.io/tinfinita/" readonly>
+        <input class="addr-input" type="text" value="https://keygen7z.github.io/tinfinita/">
         <div class="addr-drop">▼</div>
       </div>
       <div class="addr-go">Ir ▶</div>
@@ -64,7 +64,7 @@
     <!-- PAGE -->
     <div class="page">
 
-      <!-- Marquee -->
+      <!-- MARQUESINA -->
       <div class="marquee">
         <span class="mq-inner">
           ★★★ BIENVENIDO A LA WEB OFICIAL DEL CANAL ★★★
@@ -73,9 +73,9 @@
         </span>
       </div>
 
-      <!-- Site banner -->
+      <!-- BANNER DEL SITIO -->
       <div class="site-banner">
-        <h1>Tecnología Infinita</h1>
+        <img src="media/logo.gif" style="width: 100%; height: auto;">
         <p>:: TU PORTAL DE TECNOLOGÍA EN LA RED ::</p>
       </div>
 
@@ -120,7 +120,8 @@
               <div style="font-size:9px; color:#555; margin-top:2px;">Top Sites España</div>
               <div
                 style="margin-top:4px; padding:3px; background:#fff; border:1px solid #7b9ebd; font-size:8px; border-radius:2px;">
-                <b>Mejor web de 2004</b><br><span style="color:#888;">según mi perra</span>
+                <b>Mejor web de 2004</b><br><span style="color:#888;">según mi perra:</span>
+                <img src="media/canela.jpg" width="120px">
               </div>
             </div>
           </div>
@@ -241,7 +242,7 @@
                   <li>Hardware y componentes</li>
                   <li>Software y configuraciones</li>
                   <li>Reviews y unboxings</li>
-                  <li>Y lo que surja, que no se sabe</li>
+                  <li>Y cualquier cosa que se me ocurra</li>
                 </ul>
                 <hr class="xhr">
                 <b>Si eres <i>goleor/a</i> puedes entrar aquí:</b>
@@ -298,6 +299,24 @@
       sb.textContent = msgs[id] || 'Listo';
       setTimeout(function () { sb.textContent = 'Listo'; }, 900);
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var addrGo = document.querySelector('.addr-go');
+      var addrInput = document.querySelector('.addr-input');
+
+      if (addrGo && addrInput) {
+        addrGo.addEventListener('click', function () {
+          var url = addrInput.value.trim();
+          if (!url) return;
+
+          if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(url)) {
+            url = 'https://' + url;
+          }
+
+          window.location.href = url;
+        });
+      }
+    });
   </script>
 </body>
 
